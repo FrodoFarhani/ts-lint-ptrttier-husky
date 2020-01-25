@@ -6,10 +6,10 @@
   "scripts": {
     "test": "npm run start",
     "lint": "eslint src/**/*.ts --fix",
-    "format": "prettier-eslint src/**/*.{js,json} --write"
+    "format": "prettier-eslint src/**/*.{ts,json} --write"
   },
   "lint-staged": {
-    "**/*.js": [
+    "**/*.ts": [
       "eslint --fix",
       "prettier-eslint --write",
       "git add"
