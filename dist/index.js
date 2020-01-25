@@ -5,23 +5,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const app = express_1.default();
-const port = 8080; // default port to listen
-// define a route handler for the default home page
+const getYear = (date) => {
+    return `${date.getFullYear()}`;
+};
 app.get("/", (req, res) => {
-    res.send("Hello world!");
+    const year = getYear(new Date());
+    res.send(`Hello World ! ${year}`);
 });
-// start the Express server
-app.listen(port, () => {
-    let Color;
-    (function (Color) {
-        Color[Color["Red"] = 1] = "Red";
-        Color[Color["Green"] = 2] = "Green";
-        Color[Color["Blue"] = 4] = "Blue";
-    })(Color || (Color = {}));
-    const c = Color.Green;
-    const defaults = { food: "spicy", price: "$$", ambiance: "noisy" };
-    const search = Object.assign({ food: "rich" }, defaults);
-    console.log(search);
-    console.log(`server started at http://localhost:${port}`);
+app.listen(3000, () => {
+    console.log("App listening on port 3000!");
 });
 //# sourceMappingURL=index.js.map
