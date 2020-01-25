@@ -5,11 +5,11 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "npm run start",
-    "lint": "eslint dist/**/*.js --fix",
-    "format": "prettier-eslint dist/**/*.{js,json} --write"
+    "lint": "eslint src/*.js --fix",
+    "format": "prettier-eslint dist/*.{js,json} --write"
   },
   "lint-staged": {
-    "**/*.js": [
+    "/*.js": [
       "eslint --fix",
       "prettier-eslint --write",
       "git add"
