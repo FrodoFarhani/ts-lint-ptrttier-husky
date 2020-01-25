@@ -9,7 +9,7 @@
     "format": "prettier-eslint src/*.{ts,json} --write"
   },
   "lint-staged": {
-    "/*.ts": [
+    "src/*.ts": [
       "eslint --fix",
       "prettier-eslint --write",
       "git add"
@@ -17,7 +17,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm run lint"
     }
   },
   "author": "",
