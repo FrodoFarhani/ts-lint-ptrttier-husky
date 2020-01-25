@@ -8,5 +8,7 @@ app.get('/', (req, res) => {
   res.send(`Hello World ! ${year}`);
 });
 app.listen(3000, () => {
+  console.log('test');
+
   console.log('App listening on port 3000!');
 });

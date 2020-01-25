@@ -5,16 +5,19 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "npm run start",
-    "lint": "npm run tslint \"src/**/*.ts\"",
-    "precommit": "npm run lint && npm test",
-    "prepush": "npm run lint",
-    "prettier:base": "prettier --parser typescript --single-quote",
-    "prettier:check": "npm run prettier:base -- --list-different \"src/**/*.{ts,tsx}\"",
-    "prettier:write": "npm run prettier:base -- --write \"src/**/*.{ts,tsx}\""
+    "lint": "eslint src/**/*.ts --fix",
+    "format": "prettier-eslint src/**/*.{js,json} --write"
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --fix",
+      "prettier-eslint --write",
+      "git add"
+    ]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "lint-staged"
     }
   },
   "author": "",
