@@ -18,6 +18,10 @@ app.listen(port, () => {
   const defaults = { food: 'spicy', price: '$$', ambiance: 'noisy' };
   const search = { food: 'rich', ...defaults };
   console.log(search);
+  console.log(test());
 
   console.log(`server started at http://localhost:${port}`);
 });
+function test() {
+  return 'test';
+}
